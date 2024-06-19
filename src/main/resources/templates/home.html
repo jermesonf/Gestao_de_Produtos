@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>PRODUTO | CRUD</title>
+<link href="imagens/favicon.ico" rel="icon">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<script src="/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="container mt-3">
+		<h1>PRODUTOS|CRUD</h1>
+		</br>
+		
+			<label for="fname" class="form-label">Faça o cadastro do produto:</label></br> </br>
+			<div class="tabela">
+				<table class="tabled">
+					<tr>					
+						<th>Produto</th>
+						<th>Quantidade</th>
+						<th>Valor</th>
+						<th>Tipo</th>
+						<th>Lote</th>
+						<th></th>
+					</tr>
+					<tr>
+						<form action="/cadastrar" method="post">
+							<td><input type="text" id="Produto" name="nomeProduto" required class="form-control"></td>
+							<td><input type="text" id="Quantidade" name="quantidade" required class="form-control"></td>
+							<td><input type="text" id="Valor" name="valor" required class="form-control"></td>
+							<td><input type="text" id="Tipo" name="tipo" required class="form-control"></td>
+							<td><input type="text" id="Lote" name="lote" required class="form-control"></td>
+							<td><input type="submit" value="Cadastrar" class="btn btn-success"></td>
+						</form>
+					</tr>
+				</table>
+				<table class="table table-striped mt-3">
+					<tr>					
+							<th>Cod</th>
+							<th>Produto</th>
+							<th>Quantidade</th>
+							<th>Valor</th>
+							<th>Tipo</th>
+							<th>Lote</th>
+							<th>Ações</th>
+							
+					</tr>					
+					<tr th:each ="produto : ${produtos}" >					
+						    <td th:text=${produto.id}></td>
+							<td th:text=${produto.nomeProduto}></td>
+							<td th:text=${produto.quantidade}></td>
+							<td th:text=${produto.valor}></td>
+							<td th:text=${produto.tipo}></td>
+							<td th:text=${produto.lote}></td>	
+							<td> 
+								<a th:href="@{/excluir/{id}(id=${produto.id})}" class="btn btn-warning" >Excluir </a> 	
+								<a th:href="@{/editar/{id}(id=${produto.id})}"  class="btn btn-danger">Editar </a>
+							 </td>							
+					</tr>
+				</table>
+				
+			</div>
+			</br>
+			</table>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

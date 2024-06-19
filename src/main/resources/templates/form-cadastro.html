@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Cadastro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="imagens/favicon.ico" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+  <h2>Cadastro</h2>
+  <form method="post" action="/cadastro-salvar">
+  
+  	<div class="mb-3 mt-3">
+      <label for="nome">Nome:</label>
+      <input class="form-control" id="nome" placeholder="Fulano da Silva Sauro" name="nome">
+    </div>
+    
+    <div class="mb-3 mt-3">
+      <label for="email">CPF:</label>
+      <input type="cpf" class="form-control" id="cpf" placeholder="123.456.789-11" name="cpf">
+    </div>
+    
+    <div class="mb-3 mt-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="exemplo@email.com" name="email">
+    </div>
+    
+    <div class="mb-3">
+      <label for="pwd">Senha:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="********" name="password">
+      
+    </div>
+    
+    <div class="mb-3">
+      <label for="pwd"> Confirme a senha:</label>
+      <input type="password" class="form-control" id="pwd2" placeholder="********" name="password2">
+      
+    </div>
+    
+    <div class="mb-3">
+    <a href="/">Voltar a tela de login</a>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+
+</body>
+</html>
